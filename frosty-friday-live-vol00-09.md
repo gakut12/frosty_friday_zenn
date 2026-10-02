@@ -8,6 +8,7 @@ published: false
 
 Snowflake のスキルアップチャレンジ Frosty Friday を解説する YouTube 番組
 「Frosty Friday Live Challenge」の放送回をまとめました。
+こちらはテストです。
 
 https://www.youtube.com/playlist?list=PLVj4iIZgzTAq2FzaBBgqFOtZaJTcoG3JR
 
