@@ -1,0 +1,31 @@
+{
+  "featured_repos": [
+    "Chris-Hastie/Frosty-Friday",
+    "mferle/FrostyFriday",
+    "datajamesfox/frosty-friday-snowflake-challenges",
+    "gakut12/Frosty-Friday"
+  ],
+  "github_queries": [
+    "frosty friday",
+    "frostyfriday",
+    "frosty-friday"
+  ],
+  "exclude_repos": [],
+  "zenn_publications": [
+    "churadata"
+  ],
+  "zenn_users": [
+    "gak_t12"
+  ],
+  "article_queries": [
+    "frosty friday",
+    "frostyfriday",
+    "FROSTY_FRIDAY"
+  ],
+  "exclude_articles": [],
+  "article_overrides": {
+    "https://qiita.com/ak-sakatoku/items/211bc11c2766269fbd9f": {
+      "week": 49
+    }
+  }
+}
