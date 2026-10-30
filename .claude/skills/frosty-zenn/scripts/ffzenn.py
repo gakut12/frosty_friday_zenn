@@ -23,7 +23,7 @@ PLAYLIST = "https://www.youtube.com/playlist?list=PLVj4iIZgzTAq2FzaBBgqFOtZaJTco
 SHEET_CSV = "https://docs.google.com/spreadsheets/d/1mGTjjTJFZNHCuyIvW64MhErJ0wOW4RDfzx_Go-B5w7M/export?format=csv"
 DRIVE_FOLDER = "1HNPR1w59fxWToWO5hH3g_QhxkNPCiR5d"
 # このスクリプトは <repo>/.claude/skills/frosty-zenn/scripts/ にある。記事はリポジトリ直下に出力する
-DEFAULT_OUT = Path(__file__).resolve().parents[4]
+DEFAULT_OUT = Path(__file__).resolve().parents[4] / "articles"
 NAMES_FILE = Path(__file__).resolve().parent.parent / "names.json"
 
 # 運営メンバー: 表示名 -> (別名, 運営になった Vol)
@@ -343,7 +343,7 @@ def article_link(a):
 
 
 def render_week(w, links, featured):
-    out = ["", f"### Week{w['week']} – {w['level']} {w['topic']}（{w['presenter']}）", ""]
+    out = ["", f"### Week{w['week']} – {w['level']} {w['topic']}" + (f"（{w['presenter']}）" if w["presenter"] else ""), ""]
     out += [f"- 番組での解説：{u}" for u in w["links"]]
     lk = links.get("weeks", {}).get(str(w["week"]), {})
     if lk.get("official"):
@@ -364,7 +364,7 @@ def render_week(w, links, featured):
 
 def render_vol(p, links, featured):
     out = [f"## Vol.{p['vol']}（{p['date']}）", "", p["url"], ""]
-    challengers = list(dict.fromkeys(w["presenter"] for w in p["weeks"]))
+    challengers = list(dict.fromkeys(w["presenter"] for w in p["weeks"] if w["presenter"]))
     hosts = [h for h, (_, since) in HOSTS.items() if p["vol"] >= since]
     cast = list(dict.fromkeys(hosts + challengers))
     out.append(f"- 出演者：{'、'.join(cast)}、チャレンジャー：{'、'.join(challengers) or 'なし'}")
@@ -395,7 +395,7 @@ def render(a):
         "---",
         f'title: "Frosty Friday Live Challenge まとめ Vol.{lo}〜Vol.{hi}"',
         'emoji: "❄️"',
-        'type: "idea"',
+        'type: "tech"',
         'topics: ["snowflake", "frostyfriday", "snowvillage"]',
         "published: false",
         "---",

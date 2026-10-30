@@ -1,7 +1,7 @@
 ---
 title: "Frosty Friday Live Challenge まとめ Vol.10〜Vol.19"
 emoji: "❄️"
-type: "idea"
+type: "tech"
 topics: ["snowflake", "frostyfriday", "snowvillage"]
 published: false
 ---
